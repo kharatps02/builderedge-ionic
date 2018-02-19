@@ -36,6 +36,8 @@ page-stages {
                 height: 2rem;
                 max-width: 2.5rem;
                 @include margin(0);
+                border-left: 2px solid $grey1;
+                padding-left: .375rem;
             }
             .more__icon {
                 display: flex;
@@ -45,7 +47,6 @@ page-stages {
                 @extend %content-center;
             }
             .input-wrapper {
-                @extend %content-between;
                 flex-direction: row-reverse;
             }
             span {
@@ -57,18 +58,55 @@ page-stages {
                 font-style: normal;
                 font-weight: 300;
             }
+            ion-icon.arrow{
+                @include padding(0 .5rem);
+            }
         }
         ion-item.item-block {
             min-height: 3rem;
             @include padding(0 .5rem);
             border-bottom: 1px solid $grey1;
             .item-inner {
-                padding-right: 0
+                padding-right: 0;
+                .input-wrapper, ion-label {
+                    @extend %content-between;
+                    @extend %content-wrap;
+                    span{font-weight: 500;}
+                    span, p{
+                        font-size: .875rem;
+                    }
+                    p{
+                        font-weight: normal;
+                    }
+                }
             }
+            
+            button:first-child{
+                border-left: none;
+            }
+            button{
+                min-width: 21.66%;
+                max-width: 25%;
+                font-size: .875rem;
+                background: #fff;
+                padding: .75rem .5rem;
+                border-left: 1px solid $grey1;
+            }
+            button:nth-child(2){
+                max-width: 34%;
+            }
+            
+            
         }
         ion-item.item-block,
         ion-item.item-block [item-content] {
             @extend %content-center;
+        }
+        ion-item.item-block.white-btn{
+            @include padding(0);
+            ion-label{
+                justify-content: flex-start;
+            }
         }
     }
 }
