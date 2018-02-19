@@ -12,7 +12,6 @@ import { DefectsPageModule } from '../pages/defects/defects.module';
 import { InspectionsPageModule } from '../pages/inspections/inspections.module';
 import { IssuesPageModule } from '../pages/issues/issues.module';
 import { FilesPageModule } from '../pages/files/files.module';
-import { StageServiceProvider } from '../providers/stage-service/stage-service';
 
 @NgModule({
   declarations: [
@@ -35,8 +34,7 @@ import { StageServiceProvider } from '../providers/stage-service/stage-service';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler },
-    StageServiceProvider
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
 export class AppModule { }

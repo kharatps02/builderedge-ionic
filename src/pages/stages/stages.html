@@ -1,32 +1,33 @@
 <ion-header>
     <ion-navbar>
         <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+            <ion-icon name="menu"></ion-icon>
+        </button>
         <ion-title>Building 20A</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding class="grey-bg">
-    <ion-card class="stages">
+    <ion-card class="stages" *ngFor="let stage of stages">
         <ion-card-header>
-                <ion-label>Plubming Rough</ion-label>
-                <ion-label text-right><span></span> Late Start</ion-label>
+            <ion-label>{{stage.name}}</ion-label>
+            <ion-label text-right>
+                <span></span> {{stage.status}}</ion-label>
         </ion-card-header>
         <ion-item class="more">
             <div item-content>
                 <span>Start:</span>
-                <cite>2/3/2018</cite>
+                <cite>{{stage.start_date}}</cite>
                 <ion-icon class="arrow" name="arrow-round-forward"></ion-icon>
                 <span>End:</span>
-                <cite>2/3/2018</cite>
+                <cite>{{stage.end_date}}</cite>
             </div>
             <ion-icon class="more__icon" ios="ios-more" md="md-more"></ion-icon>
         </ion-item>
 
         <ion-item>
             <span class="content-wrap">Subcontractor:</span>
-            <p class="content-wrap">Robert Plumbing LTD</p>
+            <p class="content-wrap">{{stage.sub_contractor}}</p>
         </ion-item>
         <ion-item class="white-btn">
             <button item-button>Defects</button>
@@ -35,6 +36,6 @@
             <button item-button>Files</button>
         </ion-item>
 
-        
+
     </ion-card>
 </ion-content>
