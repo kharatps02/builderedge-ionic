@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
 
-import { StagePage } from '../stage/stage';
 
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
-  tab1Root = StagePage;
-  tab2Root = StagePage;
-  tab3Root = StagePage;
-  tab4Root = StagePage;
-  tab5Root = StagePage;
+  tab1Root = 'StagesPage';
+  tab2Root = 'DefectsPage';
+  tab3Root = 'InspectionsPage';
+  tab4Root = 'IssuesPage';
+  tab5Root = 'FilesPage';
 
   constructor() {
 
