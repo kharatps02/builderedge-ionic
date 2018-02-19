@@ -25,11 +25,20 @@ export class StageProvider {
       location_ref_id: 'l1'
     },
     {
-      id: 'l1-s1',
+      id: 'l1-s2',
       name: 'Plumbing Rough Loern',
       start_date: '12/3/2018',
       end_date: '19/3/2018',
       status: 'In Progress',
+      sub_contractor: 'Robert Plumbing LTD',
+      location_ref_id: 'l1'
+    },
+    {
+      id: 'l1-s3',
+      name: 'Plumbing Rough Loern2',
+      start_date: '12/3/2018',
+      end_date: '12/3/2018',
+      status: 'Done',
       sub_contractor: 'Robert Plumbing LTD',
       location_ref_id: 'l1'
     }];
