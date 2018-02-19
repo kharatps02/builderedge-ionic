@@ -1,14 +1,42 @@
-
 <ion-header>
-  <ion-navbar>     
-    <button ion-button menuToggle>
+    <ion-navbar>
+        <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Building 20A</ion-title>
-  </ion-navbar>
+        <ion-title>Building 20A</ion-title>
+    </ion-navbar>
 </ion-header>
 
+<ion-content padding class="grey-bg">
+    <ion-card class="stages">
+        <ion-card-header>
+                <ion-label>Plubming Rough</ion-label>
+                <ion-label text-right><span></span> Late Start</ion-label>
+        </ion-card-header>
+        <ion-item class="more">
+            <div item-content>
+                <span>Start:</span>
+                <cite>2/3/2018</cite>
+                <ion-icon name="arrow-round-forward"></ion-icon>
+                <span>End:</span>
+                <cite>2/3/2018</cite>
+            </div>
+            <ion-icon class="more__icon" ios="ios-more" md="md-more"></ion-icon>
+        </ion-item>
 
-<ion-content padding>
-  <h3>This is stages page</h3>
+        <ion-item>
+            <ion-icon name="wine" item-left large></ion-icon>
+            <h2>Institute of Fine Cocktails</h2>
+            <p>14 S. Hop Avenue, Madison, WI 53703</p>
+        </ion-item>
+
+        <ion-item>
+            <span item-left>18 min</span>
+            <span item-left>(2.6 mi)</span>
+            <button ion-button icon-left clear item-end>
+      			<ion-icon name="navigate"></ion-icon>
+      			Start      
+    		</button>
+        </ion-item>
+    </ion-card>
 </ion-content>

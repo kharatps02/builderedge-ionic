@@ -14,3 +14,52 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+@import '../assets/stylesheet/variables';
+@import '../assets/stylesheet/mixin';
+
+%grey1-bg{
+    background: $grey1;
+}
+%grey2-bg{
+    background: $grey2;
+}
+
+%blue1{
+    color: $blue1;
+}
+%border-radius{
+    border-radius: .5rem;
+}
+%border-top-radius{
+    border-radius: .5rem .5rem 0 0;
+}
+%alert-bg{
+    background: $alert; 
+}
+%content-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+%content-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+%content-wrap{
+    white-space: normal;
+    margin: 0;
+}
+
+html, body{
+    font-size: 100%;
+}
+.grey-bg{
+    @extend %grey1-bg;
+}
+ion-title{
+    .toolbar-title{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}

@@ -1,3 +1,74 @@
 page-stages {
-
+    ion-card.card.stages {
+        @include padding(0);
+        @include margin(0);
+        width: 100%;
+        @extend %border-radius;
+        ion-card-header {
+            font-size: 1rem;
+            border-left: .375rem solid $alert;
+            @include padding(0.875rem 0.5rem 0.875rem 0.5rem);
+            @extend %grey2-bg;
+            @extend %blue1;
+            @extend %border-top-radius;
+            @extend %content-between;
+            ion-label:first-child {
+                width: 66%;
+                flex: 0 0 66%;
+                @extend %content-wrap;
+                font-weight: 500;
+            }
+            ion-label {
+                font-weight: 400;
+                @include margin(0);
+                span {
+                    width: .75rem;
+                    height: .75rem;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin: -1px 1px 0 0;
+                    @extend %alert-bg;
+                }
+            }
+        }
+        ion-item.more {
+            ion-label {
+                height: 2rem;
+                max-width: 2.5rem;
+                @include margin(0);
+            }
+            .more__icon {
+                display: flex;
+                font-size: 2.75rem;
+                line-height: 2rem;
+                width: 38px;
+                @extend %content-center;
+            }
+            .input-wrapper {
+                @extend %content-between;
+                flex-direction: row-reverse;
+            }
+            span {
+                font-size: .875rem;
+                font-weight: 400;
+            }
+            cite {
+                font-size: .875rem;
+                font-style: normal;
+                font-weight: 300;
+            }
+        }
+        ion-item.item-block {
+            min-height: 3rem;
+            @include padding(0 .5rem);
+            border-bottom: 1px solid $grey1;
+            .item-inner {
+                padding-right: 0
+            }
+        }
+        ion-item.item-block,
+        ion-item.item-block [item-content] {
+            @extend %content-center;
+        }
+    }
 }
