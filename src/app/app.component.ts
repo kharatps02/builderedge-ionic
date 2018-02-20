@@ -31,9 +31,11 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      this.statusBar.styleDefault();    
       this.nav.setRoot(TabsPage);
+      setTimeout(() => {
+        this.splashScreen.hide();
+      }, 100);
     });
   }
 
