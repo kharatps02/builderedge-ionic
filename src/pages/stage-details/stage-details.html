@@ -1,0 +1,60 @@
+<ion-header class="blue-header">
+    <ion-navbar>
+        <ion-buttons start>
+            <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
+
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <div class="contractor-list">
+        <ion-label>Subcontractor</ion-label>
+        <ion-list>
+            <ion-item>
+                <ion-select [(ngModel)]="selectedSubcontractorId" interface="popover" placeholder="Choose from list">
+                    <ion-option value="{{subcontractor.id}}" *ngFor="let subcontractor of subcontractors">{{subcontractor.name}}</ion-option>
+                </ion-select>
+
+            </ion-item>
+            <ion-item>
+                <ion-searchbar [(ngModel)]="myInput"></ion-searchbar>
+            </ion-item>
+        </ion-list>
+    </div>
+    <ion-list>
+        <div>
+            <ion-item class="item-stable" (click)="expandCollapse('beforeStart')">
+                <i class="icon plus" ng-class=""></i> Before Start
+            </ion-item>
+            <div class="expandable" [ngClass]="{'active': expandCol === 'beforeStart'}">
+                <ion-item class="item-accordion" *ngFor="let dummyItem of dummyItems">
+                    {{dummyItem.name}}
+                </ion-item>
+            </div>
+
+            <ion-item class="item-stable" (click)="expandCollapse('inProgress')">
+                <i class="icon plus" ng-class=""></i> During Work
+            </ion-item>
+
+            <div class="expandable" [ngClass]="{'active': expandCol === 'inProgress'}">
+                <ion-item class="item-accordion" *ngFor="let dummyItem of dummyItems">
+                    {{dummyItem.name}}
+                </ion-item>
+            </div>
+
+            <ion-item class="item-stable" (click)="expandCollapse('beforeFinish')">
+                <i class="icon plus" ng-class=""></i> During Work
+            </ion-item>
+
+            <div class="expandable" [ngClass]="{'active': expandCol === 'beforeFinish'}">
+                <ion-item class="item-accordion" *ngFor="let dummyItem of dummyItems">
+                    {{dummyItem.name}}
+                </ion-item>
+            </div>
+        </div>
+    </ion-list>
+</ion-content>

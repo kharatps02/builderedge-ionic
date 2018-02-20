@@ -1,99 +1,12 @@
-<ion-header class="blue-header">
+<ion-header>
     <ion-navbar>
-        <ion-buttons start>
-            <button ion-button menuToggle>
-                <ion-icon name="menu"></ion-icon>
-            </button>
-        </ion-buttons>
-        <ion-toolbar topHeader *ngIf="!isFavorites">
-            <!-- <ion-label>Locations</ion-label> -->
-            <ion-select [(ngModel)]="selectedLocationId" interface="popover" (ionChange)="onLocationChange($event)">
-                <ion-option value="{{location.id}}" *ngFor=" let location of locations">{{location.name}}</ion-option>
-            </ion-select>
-        </ion-toolbar>
-        <ion-buttons end>
-            <button ion-button>
-                <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
-            </button>
-        </ion-buttons>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Insepections</ion-title>
     </ion-navbar>
 </ion-header>
 
-
 <ion-content padding>
-    <div class="contractor-list">
-        <ion-label>Subcontractor</ion-label>
-        <ion-list>
-            <ion-item>
-                <ion-select [(ngModel)]="gaming" placeholder="Choose from list">
-                    <ion-option value="contractor1">Subcontractor 1</ion-option>
-                    <ion-option value="contractor2">Subcontractor 2</ion-option>
-                    <ion-option value="contractor3">Subcontractor 3</ion-option>
-                    <ion-option value="contractor4">Subcontractor 4</ion-option>
-                </ion-select>
-            </ion-item>
-            <ion-item>
-                <ion-searchbar [(ngModel)]="myInput"></ion-searchbar>
-            </ion-item>
-        </ion-list>
-    </div>
-    <ion-list>
-        <div>
-            <ion-item class="item-stable" (click)="expandCollapse('beforeStart')">
-                <i class="icon plus" ng-class=""></i> Before Start
-            </ion-item>
-            <div class="expandable" [ngClass]="{'active': expandCol === 'beforeStart'}">
-                <ion-item class="item-accordion">
-                    item
-                </ion-item>
-                <ion-item class="item-accordion">
-                    item
-                </ion-item>
-                <ion-item class="item-accordion">
-                    item
-                </ion-item>
-                <ion-item class="item-accordion">
-                    item
-                </ion-item>
-            </div>
-
-            <ion-item class="item-stable" (click)="expandCollapse('inProgress')">
-                <i class="icon plus" ng-class=""></i> During Work
-            </ion-item>
-
-            <div class="expandable" [ngClass]="{'active': expandCol === 'inProgress'}">
-                <ion-item class="item-accordion">
-                    item
-                </ion-item>
-                <ion-item class="item-accordion">
-                    item
-                </ion-item>
-                <ion-item class="item-accordion">
-                    item
-                </ion-item>
-                <ion-item class="item-accordion">
-                    item
-                </ion-item>
-            </div>
-
-            <ion-item class="item-stable" (click)="expandCollapse('beforeFinish')">
-                <i class="icon plus" ng-class=""></i> During Work
-            </ion-item>
-
-            <div class="expandable" [ngClass]="{'active': expandCol === 'beforeFinish'}">
-                <ion-item class="item-accordion">
-                    item
-                </ion-item>
-                <ion-item class="item-accordion">
-                    item
-                </ion-item>
-                <ion-item class="item-accordion">
-                    item
-                </ion-item>
-                <ion-item class="item-accordion">
-                    item
-                </ion-item>
-            </div>
-        </div>
-    </ion-list>
+    <h3>This is Insepections page</h3>
 </ion-content>

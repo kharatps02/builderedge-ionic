@@ -21,7 +21,7 @@ import { FilesPageModule } from '../pages/files/files.module';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    StagesPageModule,
+    StagesPageModule,    
     DefectsPageModule,
     InspectionsPageModule,
     FilesPageModule

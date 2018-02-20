@@ -10,7 +10,7 @@ import { StageProvider, ILocation, IStage } from '../../providers/stage-service/
 export class StagesPage {
   private locations: Array<ILocation>;
   private selectedLocationId: string;
-  private stages: Array<IStage>;
+  private stages: Array<IStage> = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, private stageProvider: StageProvider) {
 
   }
