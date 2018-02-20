@@ -10,7 +10,7 @@ export class StageProvider {
 
   getLocations(): Array<ILocation> {
     let locations: Array<ILocation>;
-    locations = [{ id: 'l1', name: 'Building 20A' }];
+    locations = [{ id: 'l1', name: 'Building 20A' }, { id: 'l2', name: 'Building 20B' }];
     return locations;
   }
 
@@ -41,6 +41,24 @@ export class StageProvider {
       status: 'Done',
       sub_contractor: 'Robert Plumbing LTD',
       location_ref_id: 'l1'
+    },
+    {
+      id: 'l2-s1',
+      name: 'Plumbing Rough',
+      start_date: '2/3/2018',
+      end_date: '2/3/2018',
+      status: 'Late Start',
+      sub_contractor: 'Robert Plumbing LTD',
+      location_ref_id: 'l2'
+    },
+    {
+      id: 'l2-s2',
+      name: 'Plumbing Rough Loern',
+      start_date: '12/3/2018',
+      end_date: '19/3/2018',
+      status: 'In Progress',
+      sub_contractor: 'Robert Plumbing LTD',
+      location_ref_id: 'l2'
     }];
 
     stages = stages.filter((self) => {

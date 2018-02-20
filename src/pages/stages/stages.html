@@ -3,7 +3,14 @@
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>Building 20A</ion-title>
+        <ion-item>
+            <!-- <ion-label>Locations</ion-label> -->
+            <ion-select [(ngModel)]="selectedLocationId" interface="popover" (ionChange)="onLocationChange($event)">
+                <ion-option value="{{location.id}}" *ngFor=" let location of locations">{{location.name}}</ion-option>
+            </ion-select>
+            {{selectedLocationId}}
+        </ion-item>
+
     </ion-navbar>
 </ion-header>
 

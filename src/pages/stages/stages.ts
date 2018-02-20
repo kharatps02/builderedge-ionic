@@ -8,6 +8,7 @@ import { StageProvider, ILocation, IStage } from '../../providers/stage-service/
 })
 export class StagesPage {
   private locations: Array<ILocation>;
+  private selectedLocationId: string;
   private stages: Array<IStage>;
   constructor(public navCtrl: NavController, public navParams: NavParams, private stageProvider: StageProvider) {
 
@@ -16,7 +17,11 @@ export class StagesPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad StagesPage');
     this.locations = this.stageProvider.getLocations();
-    this.stages = this.stageProvider.getStagesByLocationId(this.locations[0].id);
+    this.selectedLocationId = this.locations[0].id;
+    this.stages = this.stageProvider.getStagesByLocationId(this.selectedLocationId);
   }
 
+  onLocationChange(){
+    this.stages = this.stageProvider.getStagesByLocationId(this.selectedLocationId);
+  }
 }
