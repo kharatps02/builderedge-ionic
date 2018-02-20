@@ -98,6 +98,9 @@ ion-title.title {
     @include padding(1rem 0);
 }
 
+ion-select {
+    max-width: 100%;
+}
 .blue-header {
     ion-select {
         max-width: 100%;
@@ -143,14 +146,30 @@ ion-popover.select-popover {
     
 }
 
-
 /* Radio Popup */
 
-// .alert-radio-group{
-//     button.alert-radio, button.alert-radio[aria-checked=true]{ 
-//         .alert-radio-label{
-//             color: #000;
-//             font-size: 1rem;
-//         }
-//     }
-// }
+.alert-radio-group{
+    button.alert-radio, button.alert-radio[aria-checked=true]{ 
+        border-bottom: 1px solid #e8e8e8;
+        .alert-radio-label{
+            color: #000;
+            font-size: 1rem;
+        }
+    }
+}
+
+ion-picker-cmp.picker-ios, ion-picker-cmp.picker-md{
+    .picker-opts{
+        .picker-opt{
+            height: 2.8rem;
+            font-size: 1rem;
+        }
+    }
+}
+.button-md, .button-ios{
+    font-size: 1rem;
+}
+.invisiable{
+    display: none;
+    visibility: hidden;
+}

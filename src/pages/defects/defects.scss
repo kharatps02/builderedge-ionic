@@ -1,3 +1,116 @@
 page-defects {
+    // ion-content.grey-bg{
+    //     .scroll-content{
+    //         @include padding(0 1rem 1rem 1rem);
+    //     }
+        
+    // }
 
+    .defect-select{
+        background: #fff;
+        @include margin(0);
+        @include padding(.5rem 1rem);
+        ion-item.item-block{
+            min-height: 2rem;
+            @include padding(0);
+            &:last-child, &:first-child{
+                border: none;
+            }
+            .item-inner{
+                @include padding(0);
+            }
+        }
+        ion-select{
+            width: 100%;
+            font-size: .75rem;
+            font-weight: normal;
+            @include padding(.25rem .5rem);
+            border: 1px solid #ababab;
+            align-items: center;
+            box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+            .select-text{
+                @include padding(.5rem);
+                border-right: 1px solid #d5d5d5;
+            }
+            .select-icon{
+                left: 5px;
+                width: 24px;
+
+            }
+        }
+    }
+    .defect-edit{
+        ion-item.item-block.margin-16px{
+            margin: 1rem 0 0 0;
+        }
+        ion-item.item-block.margin-32px{
+            margin: 2rem 0 0 0;
+        }
+        ion-item{
+            min-height: 2rem;
+            border: none;
+            background: transparent;
+            border-top: none;
+            @include padding(0);
+            .item-inner{
+                @include padding(.5rem 0 0.5rem .75rem);
+                
+            }
+            span{
+                font-size: .875rem;
+            }
+            span:first-child{
+                width: 50%;
+                display: inline-block;
+            } 
+            span:last-child{
+                color: $blue3;
+                font-weight: 300;
+                width: 50%;
+                display: inline-block;
+                @include margin(0);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            } 
+            ion-icon{
+                min-height: 1.5rem;
+                display: flex;
+                font-size: 1.25rem;
+                align-items: center;
+                border-left: 1px solid #999;
+                @include margin(0 !important);
+                @include padding(0 .125rem 0 .625rem);
+            }
+            ion-label{
+                @extend %content-center;
+                @include margin(0);
+                @include padding(0 .5rem 0 0);
+            }
+        }
+        .date-picker{
+            [item-content]{
+                width: 100%;
+                @extend %content-center;
+                button{
+                    width: 50%;
+                    color: $blue3;
+                    font-weight: 300;
+                    background: transparent;
+                    border-radius: 0;
+                    pointer-events: none;
+                    @include padding(0);
+                    @include margin(0);
+                    span{
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-start;
+                    }
+                    ion-datetime{
+                        @include padding(0);
+                    }
+                }
+            }
+        }
+    }
 }
