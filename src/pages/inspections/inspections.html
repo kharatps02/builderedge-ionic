@@ -21,20 +21,22 @@
 
 
 <ion-content padding>
-    <ion-label>Subcontractor</ion-label>
-    <ion-list >
-        <ion-item>
-            <ion-select [(ngModel)]="gaming" placeholder="Choose from list">
-                <ion-option value="contractor1">Subcontractor 1</ion-option>
-                <ion-option value="contractor2">Subcontractor 2</ion-option>
-                <ion-option value="contractor3">Subcontractor 3</ion-option>
-                <ion-option value="contractor4">Subcontractor 4</ion-option>
-            </ion-select>
-        </ion-item>
-        <ion-item>
-            <ion-searchbar [(ngModel)]="myInput"></ion-searchbar>
-        </ion-item>
-    </ion-list>
+    <div class="contractor-list">
+        <ion-label>Subcontractor</ion-label>
+        <ion-list>
+            <ion-item>
+                <ion-select [(ngModel)]="gaming" placeholder="Choose from list">
+                    <ion-option value="contractor1">Subcontractor 1</ion-option>
+                    <ion-option value="contractor2">Subcontractor 2</ion-option>
+                    <ion-option value="contractor3">Subcontractor 3</ion-option>
+                    <ion-option value="contractor4">Subcontractor 4</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-searchbar [(ngModel)]="myInput"></ion-searchbar>
+            </ion-item>
+        </ion-list>
+    </div>
     <ion-list>
         <div>
             <ion-item class="item-stable" (click)="expandCollapse('beforeStart')">
