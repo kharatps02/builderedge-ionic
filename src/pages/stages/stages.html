@@ -1,15 +1,21 @@
-<ion-header>
+<ion-header class="blue-header">
     <ion-navbar>
-        <button ion-button menuToggle>
-            <ion-icon name="menu"></ion-icon>
-        </button>
-        <ion-item>
+        <ion-buttons start>
+            <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-toolbar topHeader *ngIf="!isFavorites">
             <!-- <ion-label>Locations</ion-label> -->
             <ion-select [(ngModel)]="selectedLocationId" interface="popover" (ionChange)="onLocationChange($event)">
                 <ion-option value="{{location.id}}" *ngFor=" let location of locations">{{location.name}}</ion-option>
             </ion-select>
-        </ion-item>
-
+        </ion-toolbar>
+        <ion-buttons end>
+            <button ion-button>
+                <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
 </ion-header>
 
@@ -44,7 +50,11 @@
             <button item-button (click)="navigateTo('IssuesPage',stage)">Issues</button>
             <button item-button (click)="navigateTo('FilesPage',stage)">Files</button>
         </ion-item>
-
+        <ion-item class="action-btn">
+            <button item-button class="blue-btn">Start</button>
+            <button item-button class="grey-btn active">Finish</button>
+            <button item-button class="white-btn active">Details</button>
+        </ion-item>
 
     </ion-card>
 </ion-content>

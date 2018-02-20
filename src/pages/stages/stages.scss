@@ -1,7 +1,7 @@
 page-stages {
     ion-card.card.stages {
         @include padding(0);
-        @include margin(0);
+        @include margin(0 0 1rem 0);
         width: 100%;
         @extend %border-radius;
         ion-card-header {
@@ -59,6 +59,7 @@ page-stages {
                 font-weight: 300;
             }
             ion-icon.arrow{
+                font-size: 1rem;
                 @include padding(0 .5rem);
             }
         }
@@ -80,32 +81,47 @@ page-stages {
                     }
                 }
             }
-            
+        }
+        ion-item.item-block,
+        ion-item.item-block [item-content] {
+            @extend %content-center;
+        }
+        ion-item.item-block.action-white-btn{
+            @include padding(0);
+            ion-label{
+                justify-content: flex-start;
+            }
             button:first-child{
                 border-left: none;
             }
             button{
-                min-width: 21.66%;
-                max-width: 25%;
+                width: 25%;
+                max-width: 35%;
                 font-size: .875rem;
                 background: #fff;
                 padding: .75rem .5rem;
                 border-left: 1px solid $grey1;
             }
             button:nth-child(2){
-                max-width: 34%;
+                width: 34%;
             }
-            
-            
         }
-        ion-item.item-block,
-        ion-item.item-block [item-content] {
-            @extend %content-center;
-        }
-        ion-item.item-block.white-btn{
+        ion-item.item-block.action-btn{
             @include padding(0);
             ion-label{
-                justify-content: flex-start;
+                @include padding(.5rem);
+            }
+            button{
+                box-shadow: 0px 1px 4px #999;
+            }
+            .blue-btn, .grey-btn{
+                width: calc(40% - .5rem);
+            }
+            .grey-btn{
+                @include margin(0 .5rem);
+            }
+            .white-btn{
+                width: 20%;
             }
         }
     }

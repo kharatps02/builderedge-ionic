@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -16,50 +14,143 @@
 // automatically applied to the <body> element in the app.
 @import '../assets/stylesheet/variables';
 @import '../assets/stylesheet/mixin';
-
-%grey1-bg{
+%grey1-bg {
     background: $grey1;
 }
-%grey2-bg{
+
+%grey2-bg {
     background: $grey2;
 }
 
-%blue1{
+%blue1 {
     color: $blue1;
 }
-%border-radius{
+
+%blue1-bg {
+    background: $blue1;
+}
+
+%white {
+    color: $white;
+}
+
+%border-radius {
     border-radius: .5rem;
 }
-%border-top-radius{
+
+%border-top-radius {
     border-radius: .5rem .5rem 0 0;
 }
-%alert-bg{
-    background: $alert; 
+
+%alert-bg {
+    background: $alert;
 }
-%content-center{
+
+%content-center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-%content-between{
+
+%content-between {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-%content-wrap{
+
+%content-wrap {
     white-space: normal;
     margin: 0;
 }
 
-html, body{
+html,
+body {
     font-size: 100%;
 }
-.grey-bg{
+
+.grey-bg {
     @extend %grey1-bg;
 }
-ion-title{
-    .toolbar-title{
+
+ion-title.title {
+    @include padding(0);
+    .toolbar-title {
         font-size: 1rem;
         font-weight: 500;
     }
 }
+
+.blue-btn {
+    @include padding(1rem 0);
+    color: $white;
+    background: $blue2;
+}
+
+.grey-btn {
+    color: $grey4;
+    background: $grey3;
+    @include padding(1rem 0);
+}
+
+.white-btn {
+    color: $blue2;
+    background: $white;
+    @include padding(1rem 0);
+}
+
+.blue-header {
+    ion-select {
+        max-width: 100%;
+    }
+    .toolbar-background {
+        @extend %blue1-bg;
+    }
+    button {
+        @extend %white;
+    }
+    ion-buttons {
+        button.bar-button-menutoggle ion-icon {
+            font-size: 2rem;
+        }
+        button.bar-button {
+            font-size: 1.5rem;
+        }
+    }
+    .select-text {
+        color: $white;
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+
+
+/* Popover */
+
+ion-popover.select-popover {
+    .popover-content {
+        left: 0 !important;
+        width: 100%;
+        ion-list[radio-group] {
+        ion-item.item-block{
+            min-height: 3rem;
+            ion-label{
+                color: #000;
+                font-size: 1rem;
+            }
+        }
+    }
+    }
+    
+}
+
+
+/* Radio Popup */
+
+// .alert-radio-group{
+//     button.alert-radio, button.alert-radio[aria-checked=true]{ 
+//         .alert-radio-label{
+//             color: #000;
+//             font-size: 1rem;
+//         }
+//     }
+// }
