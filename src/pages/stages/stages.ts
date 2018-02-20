@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { StageProvider, ILocation, IStage } from '../../providers/stage-service/stage-service';
+
 @IonicPage()
 @Component({
   selector: 'page-stages',
@@ -16,12 +17,27 @@ export class StagesPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad StagesPage');
+    this.init();
+  }
+
+  doRefresh(refresher) {
+    this.onLocationChange();
+    setTimeout(() => {
+      refresher.complete();
+    }, 500);
+  }
+
+  init() {
     this.locations = this.stageProvider.getLocations();
     this.selectedLocationId = this.locations[0].id;
     this.stages = this.stageProvider.getStagesByLocationId(this.selectedLocationId);
   }
 
-  onLocationChange(){
+  onLocationChange() {
     this.stages = this.stageProvider.getStagesByLocationId(this.selectedLocationId);
+  }
+
+  navigateTo(toPageName, options) {
+    this.navCtrl.push(toPageName, options);
   }
 }

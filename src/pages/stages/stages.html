@@ -8,13 +8,15 @@
             <ion-select [(ngModel)]="selectedLocationId" interface="popover" (ionChange)="onLocationChange($event)">
                 <ion-option value="{{location.id}}" *ngFor=" let location of locations">{{location.name}}</ion-option>
             </ion-select>
-            {{selectedLocationId}}
         </ion-item>
 
     </ion-navbar>
 </ion-header>
 
 <ion-content padding class="grey-bg">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingText="Pull to refresh"></ion-refresher-content>
+    </ion-refresher>
     <ion-card class="stages" *ngFor="let stage of stages">
         <ion-card-header>
             <ion-label>{{stage.name}}</ion-label>
@@ -37,10 +39,10 @@
             <p class="content-wrap">{{stage.sub_contractor}}</p>
         </ion-item>
         <ion-item class="white-btn">
-            <button item-button>Defects</button>
-            <button item-button class="active">Inspections</button>
-            <button item-button>Issues</button>
-            <button item-button>Files</button>
+            <button item-button (click)="navigateTo('DefectsPage',stage)">Defects</button>
+            <button item-button class="active" (click)="navigateTo('InspectionsPage',stage)">Inspections</button>
+            <button item-button (click)="navigateTo('IssuesPage',stage)">Issues</button>
+            <button item-button (click)="navigateTo('FilesPage',stage)">Files</button>
         </ion-item>
 
 
