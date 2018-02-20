@@ -7,12 +7,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'inspections.html',
 })
 export class InspectionsPage {
+  private expandCol: string = 'beforeStart';
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InspectionsPage');
+  }
+  expandCollapse(workstage){
+    this.expandCol = workstage;
+
   }
 
 }

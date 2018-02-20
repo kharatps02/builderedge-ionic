@@ -1,14 +1,71 @@
-
 <ion-header>
-  <ion-navbar>     
-    <button ion-button menuToggle>
+    <ion-navbar>
+        <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Inspections</ion-title>
-  </ion-navbar>
+        <ion-title>Inspections</ion-title>
+    </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-  <h3>This is inspections page</h3>
+    <ion-list>
+        <div>
+            <ion-item class="item-stable" (click)="expandCollapse('beforeStart')">
+                <i class="icon plus" ng-class=""></i> Before Start
+            </ion-item>
+            <div class="expandable" [ngClass]="{'active': expandCol === 'beforeStart'}">
+                <ion-item class="item-accordion">
+                    item
+                </ion-item>
+                <ion-item class="item-accordion">
+                    item
+                </ion-item>
+                <ion-item class="item-accordion">
+                    item
+                </ion-item>
+                <ion-item class="item-accordion">
+                    item
+                </ion-item>
+            </div>
+            
+            <ion-item class="item-stable" (click)="expandCollapse('inProgress')">
+                <i class="icon plus" ng-class=""></i> During Work
+            </ion-item>
+
+            <div class="expandable" [ngClass]="{'active': expandCol === 'inProgress'}">
+                <ion-item class="item-accordion">
+                    item
+                </ion-item>
+                <ion-item class="item-accordion">
+                    item
+                </ion-item>
+                <ion-item class="item-accordion">
+                    item
+                </ion-item>
+                <ion-item class="item-accordion">
+                    item
+                </ion-item>
+            </div>
+
+            <ion-item class="item-stable" (click)="expandCollapse('beforeFinish')">
+                <i class="icon plus" ng-class=""></i> Before Finish
+            </ion-item>
+
+            <div class="expandable" [ngClass]="{'active': expandCol === 'beforeFinish'}">
+                <ion-item class="item-accordion">
+                    item
+                </ion-item>
+                <ion-item class="item-accordion">
+                    item
+                </ion-item>
+                <ion-item class="item-accordion">
+                    item
+                </ion-item>
+                <ion-item class="item-accordion">
+                    item
+                </ion-item>
+            </div>
+        </div>
+    </ion-list>
 </ion-content>
