@@ -16,12 +16,15 @@ export class StageDetailsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad StageDetailsPage');
+    this.init();
+  }
+  init() {
     this.subcontractors = [
       { id: 'c1', name: 'Robert	Thomson' },
       { id: 'c2', name: 'Kevin	May' },
       { id: 'c3', name: 'Joseph	Thomson' },
       { id: 'c4', name: 'Jacob	Bell' }];
-
+    this.selectedSubcontractorId = this.subcontractors[0].id;
     this.dummyItems = [{
       id: 'i1',
       name: 'Lorem ipsum is simply'
