@@ -20,10 +20,8 @@
     <ion-list class="defect-select">
         <ion-item>
             <ion-label>Defect List</ion-label>
-            <ion-select [(ngModel)]="selectedLocationId" placeholder="Choose Defect List">
-                <ion-option value="defects">Water leak in kitchen think</ion-option>
-                <ion-option value="defects1">Defect Location</ion-option>
-                <ion-option value="defects2">Defect Location</ion-option>
+            <ion-select [(ngModel)]="selectedDefectId" placeholder="Choose Defect List" interface='popover' (ionChange)="onDefectsChange($event)">
+                <ion-option value="defec.idt" *ngFor=" let defect of defects">{{defect.name}}</ion-option>
             </ion-select>
         </ion-item>
     </ion-list>
@@ -36,7 +34,7 @@
         <ion-item>
             <span>Zone:</span>
             <span>Kitchen</span>
-			<ion-icon item-end class="invisiable" ios="md-create" md="md-create"></ion-icon>
+            <ion-icon item-end class="invisiable" ios="md-create" md="md-create"></ion-icon>
         </ion-item>
         <ion-item>
             <span>Subcontractor:</span>
@@ -45,43 +43,43 @@
         </ion-item>
         <ion-item class="date-picker">
             <div item-content>
-				<span>Due Date:</span>
+                <span>Due Date:</span>
                 <button ion-button icon-right (click)="picker.open()">
-					<ion-datetime #picker pickerFormat="DD MMMM YYYY" [min]="datePickerMin" [(ngModel)]="datePicker"></ion-datetime>
-				</button>
+                    <ion-datetime #picker pickerFormat="DD MMMM YYYY" [min]="datePickerMin" [(ngModel)]="datePicker"></ion-datetime>
+                </button>
             </div>
-			<ion-icon item-end name="calendar" (click)="picker.open()"></ion-icon>
+            <ion-icon item-end name="calendar" (click)="picker.open()"></ion-icon>
         </ion-item>
 
-		<ion-item class="margin-32px">
+        <ion-item class="margin-32px">
             <span>Found Stage:</span>
             <span>Stage Name</span>
-			<ion-icon item-end class="invisiable" ios="md-create" md="md-create"></ion-icon>
+            <ion-icon item-end class="invisiable" ios="md-create" md="md-create"></ion-icon>
         </ion-item>
-		<ion-item>
+        <ion-item>
             <span>Inspection line item:</span>
             <span>Inspector form</span>
-			<ion-icon item-end class="invisiable" ios="md-create" md="md-create"></ion-icon>
+            <ion-icon item-end class="invisiable" ios="md-create" md="md-create"></ion-icon>
         </ion-item>
-		<ion-item>
+        <ion-item>
             <span>Reported By:</span>
             <span>John</span>
-			<ion-icon item-end class="invisiable" ios="md-create" md="md-create"></ion-icon>
+            <ion-icon item-end class="invisiable" ios="md-create" md="md-create"></ion-icon>
         </ion-item>
-		<ion-item class="margin-32px">
+        <ion-item class="margin-32px">
             <span>Fix On Stage:</span>
             <span>Stage Name</span>
-			<ion-icon item-end class="invisiable" ios="md-create" md="md-create"></ion-icon>
+            <ion-icon item-end class="invisiable" ios="md-create" md="md-create"></ion-icon>
         </ion-item>
-		<ion-item>
+        <ion-item>
             <span>By SUNC:</span>
             <span>PlumberBER LTD</span>
-			<ion-icon item-end class="" ios="md-create" md="md-create"></ion-icon>
+            <ion-icon item-end class="" ios="md-create" md="md-create"></ion-icon>
         </ion-item>
-		<ion-item>
+        <ion-item>
             <span>Reported By:</span>
             <span>John</span>
-			<ion-icon item-end class="invisiable" ios="md-create" md="md-create"></ion-icon>
+            <ion-icon item-end class="invisiable" ios="md-create" md="md-create"></ion-icon>
         </ion-item>
     </ion-list>
 
