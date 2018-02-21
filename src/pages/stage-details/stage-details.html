@@ -15,7 +15,7 @@
         <ion-list>
             <ion-item>
                 <ion-select [(ngModel)]="selectedSubcontractorId" interface="popover" placeholder="Choose from list">
-                    <ion-option value="{{subcontractor.id}}" *ngFor="let subcontractor of subcontractors">{{subcontractor.name}}</ion-option>
+                    <ion-option [value]="subcontractor.id" *ngFor="let subcontractor of subcontractors">{{subcontractor.name}}</ion-option>
                 </ion-select>
 
             </ion-item>

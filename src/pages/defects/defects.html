@@ -1,10 +1,8 @@
 <ion-header class="blue-header">
     <ion-navbar>
-
-        <ion-toolbar topHeader *ngIf="!isFavorites">
-            <!-- <ion-label>Locations</ion-label> -->
+        <ion-toolbar topHeader>
             <ion-select [(ngModel)]="selectedLocationId" interface="popover" (ionChange)="onLocationChange($event)">
-                <ion-option value="{{location.id}}" *ngFor=" let location of locations">{{location.name}}</ion-option>
+                <ion-option [value]="location.id" *ngFor=" let location of locations">{{location.name}}</ion-option>
             </ion-select>
 
         </ion-toolbar>
@@ -21,38 +19,39 @@
     <ion-list class="defect-select">
         <ion-item>
             <ion-label>Defect List</ion-label>
-            <ion-select [(ngModel)]="selectedDefectId" placeholder="Choose Defect List" interface='popover' (ionChange)="onDefectsChange($event)">
-                <ion-option value="defec.idt" *ngFor=" let defect of defects">{{defect.name}}</ion-option>
+            <ion-select [(ngModel)]="selectedDefect" placeholder="Choose Defect List" interface='popover' (ionChange)="onDefectsChange($event)">
+                <ion-option [value]="defect" *ngFor=" let defect of defects">{{defect.name}}</ion-option>
             </ion-select>
+
         </ion-item>
     </ion-list>
-    <ion-list class="defect-edit">
+    <ion-list class="defect-edit" *ngIf="selectedDefect">
         <ion-item class="margin-16px">
             <div item-content>
                 <span>Description:</span>
-                <ion-input value="Water leak in kitchen think" readonly="true"></ion-input>
+                <ion-input [(ngModel)]="selectedDefect.description" [readonly]="readonlyField.description"></ion-input>
             </div>
-            <ion-icon item-end ios="md-create" md="md-create"></ion-icon>
+            <ion-icon item-end ios="md-create" md="md-create" (click)="readonlyField.description=!readonlyField.description"></ion-icon>
         </ion-item>
         <ion-item>
             <div item-content>
                 <span>Zone:</span>
-                <ion-input value="Kitchen" readonly="true"></ion-input>
+                <ion-input [(ngModel)]="selectedDefect.zone" readonly="true"></ion-input>
             </div>
             <ion-icon item-end class="invisiable" ios="md-create" md="md-create"></ion-icon>
         </ion-item>
         <ion-item>
             <div item-content>
                 <span>Subcontractor:</span>
-                <ion-input value="PlumerBER LTD" readonly="true"></ion-input>
+                <ion-input [(ngModel)]="selectedDefect.subcontractor" [readonly]="readonlyField.subcontractor"></ion-input>
             </div>
-            <ion-icon item-end ios="md-create" md="md-create"></ion-icon>
+            <ion-icon item-end ios="md-create" md="md-create" (click)="readonlyField.subcontractor=!readonlyField.subcontractor"></ion-icon>
         </ion-item>
         <ion-item class="date-picker">
             <div item-content>
                 <span>Due Date:</span>
                 <button ion-button icon-right (click)="picker.open()">
-                    <ion-datetime #picker pickerFormat="DD MMMM YYYY" [min]="datePickerMin" [(ngModel)]="datePicker"></ion-datetime>
+                    <ion-datetime #picker pickerFormat="DD MM YYYY" [(ngModel)]="selectedDefect.due_date"></ion-datetime>
                 </button>
             </div>
             <ion-icon item-end name="calendar" (click)="picker.open()"></ion-icon>
@@ -61,74 +60,64 @@
         <ion-item class="margin-32px">
             <div item-content>
                 <span>Found Stage:</span>
-                <ion-input value="Stage Name" readonly="true"></ion-input>
+                <ion-input [(ngModel)]="selectedDefect.stage_name" readonly="true"></ion-input>
             </div>
             <ion-icon item-end class="invisiable" ios="md-create" md="md-create"></ion-icon>
         </ion-item>
         <ion-item>
             <div item-content>
                 <span>Inspection line item:</span>
-                <ion-input value="Inspector form" readonly="true"></ion-input>
+                <ion-input [(ngModel)]="selectedDefect.inpsection_line_item" readonly="true"></ion-input>
             </div>
             <ion-icon item-end class="invisiable" ios="md-create" md="md-create"></ion-icon>
         </ion-item>
         <ion-item>
             <div item-content>
                 <span>Reported By:</span>
-                <ion-input value="John" readonly="true"></ion-input>
+                <ion-input [(ngModel)]="selectedDefect.found_by" readonly="true"></ion-input>
             </div>
             <ion-icon item-end class="invisiable" ios="md-create" md="md-create"></ion-icon>
         </ion-item>
         <ion-item class="margin-32px">
             <div item-content>
                 <span>Fix On Stage:</span>
-                <ion-input value="Stage Name" readonly="true"></ion-input>
+                <ion-input [(ngModel)]="selectedDefect.fix_on_stage" readonly="true"></ion-input>
             </div>
             <ion-icon item-end class="invisiable" ios="md-create" md="md-create"></ion-icon>
         </ion-item>
         <ion-item>
             <div item-content>
                 <span>By SUNC:</span>
-                <ion-input value="PlumberBER LTD" readonly="true"></ion-input>
+                <ion-input [(ngModel)]="selectedDefect.by_sunc" [readonly]="readonlyField.by_sunc"></ion-input>
             </div>
-            <ion-icon item-end class="" ios="md-create" md="md-create"></ion-icon>
+            <ion-icon item-end class="" ios="md-create" md="md-create" (click)="readonlyField.by_sunc=!readonlyField.by_sunc"></ion-icon>
         </ion-item>
         <ion-item>
             <div item-content>
                 <span>Reported By:</span>
-                <ion-input value="John" readonly="true"></ion-input>
+                <ion-input [(ngModel)]="selectedDefect.fix_by" readonly="true"></ion-input>
             </div>
             <ion-icon item-end class="invisiable" ios="md-create" md="md-create"></ion-icon>
         </ion-item>
     </ion-list>
-    <div class="image-slider">
+    <div *ngIf="selectedDefect && selectedDefect.images" class="image-slider">
         <ion-slides pager>
-            <ion-slide>
-                <ion-img src="../../assets/imgs/image1.jpg"></ion-img>
-            </ion-slide>
-
-            <ion-slide>
-                <ion-img src="../../assets/imgs/image2.jpg"></ion-img>
-            </ion-slide>
-
-            <ion-slide>
-                <ion-img src="../../assets/imgs/image3.jpg"></ion-img>
-            </ion-slide>
-            <ion-slide>
-                <ion-img src="../../assets/imgs/image3.jpg"></ion-img>
+            <ion-slide *ngFor="let image of selectedDefect.images">
+                <ion-img [src]="image"></ion-img>
             </ion-slide>
         </ion-slides>
     </div>
-	<div class="remark">
-		<ion-label>Approve Remark</ion-label>
-		<ion-item>
-			<ion-textarea placeholder="Enter a description"></ion-textarea>
-		</ion-item>
-	</div>
-	<div class="action-btn">
-		<ion-item>
-			<button item-button class="blue-btn"> <ion-icon ios="ios-checkmark-circle-outline" md="ios-checkmark-circle-outline"></ion-icon> Done</button>
-            <button item-button class="white-btn active" (click)="navigateTo('StageDetailsPage',stage)">Details</button>
-		</ion-item>
-	</div>
+    <div class="remark">
+        <ion-label>Approve Remark</ion-label>
+        <ion-item>
+            <ion-textarea placeholder="Enter a description" [(ngModel)]="selectedDefect.remark"></ion-textarea>
+        </ion-item>
+    </div>
+    <div class="action-btn">
+        <ion-item>
+            <button item-button class="blue-btn">
+                <ion-icon ios="ios-checkmark-circle-outline" md="ios-checkmark-circle-outline"></ion-icon> Done</button>
+            <button item-button class="white-btn active">Details</button>
+        </ion-item>
+    </div>
 </ion-content>

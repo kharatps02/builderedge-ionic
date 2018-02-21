@@ -5,9 +5,9 @@
                 <ion-icon name="menu"></ion-icon>
             </button>
         </ion-buttons>
-        <ion-toolbar topHeader>          
+        <ion-toolbar topHeader>
             <ion-select [(ngModel)]="selectedLocationId" interface="popover" (ionChange)="onLocationChange($event)">
-                <ion-option value="{{location.id}}" *ngFor=" let location of locations">{{location.name}}</ion-option>
+                <ion-option [value]="location.id" *ngFor=" let location of locations">{{location.name}}</ion-option>
             </ion-select>
         </ion-toolbar>
         <ion-buttons end>
