@@ -27,13 +27,13 @@ export class StageDetailsPage {
     this.selectedSubcontractorId = this.subcontractors[0].id;
     this.dummyItems = [{
       id: 'i1',
-      name: 'Lorem ipsum is simply'
+      name: 'Leakage in Kitchen'
     }, {
       id: 'i2',
-      name: 'dummy text of the'
+      name: 'Lights not working'
     }, {
       id: 'i1',
-      name: 'this is last item'
+      name: 'Security Inspection'
     }];
   }
   expandCollapse(workstage) {

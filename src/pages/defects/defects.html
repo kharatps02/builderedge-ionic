@@ -1,11 +1,15 @@
 <ion-header class="blue-header">
     <ion-navbar>
-        <ion-toolbar topHeader>
+        <!-- <ion-toolbar topHeader>
             <ion-select [(ngModel)]="selectedLocationId" interface="popover" (ionChange)="onLocationChange($event)">
                 <ion-option [value]="location.id" *ngFor=" let location of locations">{{location.name}}</ion-option>
             </ion-select>
 
-        </ion-toolbar>
+        </ion-toolbar> -->
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Defects</ion-title>
         <ion-buttons end>
             <button ion-button>
                 <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
