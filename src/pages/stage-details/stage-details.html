@@ -9,8 +9,7 @@
     </ion-navbar>
 </ion-header>
 
-
-<ion-content padding>
+<ion-content padding class="grey-bg">
     <div class="contractor-list">
         <ion-label>Subcontractor</ion-label>
         <ion-list>
@@ -25,36 +24,62 @@
             </ion-item>
         </ion-list>
     </div>
-    <ion-list>
-        <div>
-            <ion-item class="item-stable" (click)="expandCollapse('beforeStart')">
-                <i class="icon plus" ng-class=""></i> Before Start
+    <ion-list class="stage-status">
+        <ion-item class="item-stable" (click)="expandCollapse('beforeStart')">
+            Before Start
+            <ion-icon item-end ios="md-add" md="md-add" *ngIf="expandCol !== 'beforeStart'"></ion-icon>
+            <ion-icon item-end ios="md-remove" md="md-remove" *ngIf="expandCol === 'beforeStart'"></ion-icon>
+        </ion-item>
+        <div class="expandable" [ngClass]="{'active': expandCol === 'beforeStart'}">
+            <ion-item *ngFor="let dummyItem of dummyItems">
+                <ion-label>{{dummyItem.name}}</ion-label>
+                <ion-checkbox item-end></ion-checkbox>
+                <ion-icon item-end class="arrow-dropright" ios="ios-arrow-dropright" md="md-arrow-dropright"></ion-icon>
             </ion-item>
-            <div class="expandable" [ngClass]="{'active': expandCol === 'beforeStart'}">
-                <ion-item class="item-accordion" *ngFor="let dummyItem of dummyItems">
-                    {{dummyItem.name}}
-                </ion-item>
-            </div>
-
-            <ion-item class="item-stable" (click)="expandCollapse('inProgress')">
-                <i class="icon plus" ng-class=""></i> During Work
+            <ion-item class="item-date">
+                <div item-content>
+                    <span>Start Date:</span>
+                    <button ion-button icon-right (click)="picker.open()">
+                        <ion-datetime #picker pickerFormat="DD MMMM YYYY" [min]="datePickerMin" [(ngModel)]="datePicker"></ion-datetime>
+                    </button>
+                </div>
+                <ion-icon item-end name="calendar" (click)="picker.open()"></ion-icon>
             </ion-item>
-
-            <div class="expandable" [ngClass]="{'active': expandCol === 'inProgress'}">
-                <ion-item class="item-accordion" *ngFor="let dummyItem of dummyItems">
-                    {{dummyItem.name}}
-                </ion-item>
-            </div>
-
-            <ion-item class="item-stable" (click)="expandCollapse('beforeFinish')">
-                <i class="icon plus" ng-class=""></i> During Work
+        </div>
+    </ion-list>
+    <button ion-button class="blue-btn">Start</button>
+    <ion-list class="stage-status">
+        <ion-item class="item-stable" (click)="expandCollapse('inProgress')">
+            During Work
+            <ion-icon item-end ios="md-add" md="md-add" *ngIf="expandCol !== 'inProgress'"></ion-icon>
+            <ion-icon item-end ios="md-remove" md="md-remove" *ngIf="expandCol === 'inProgress'"></ion-icon>
+        </ion-item>
+        <div class="expandable" [ngClass]="{'active': expandCol === 'inProgress'}">
+            <ion-item *ngFor="let dummyItem of dummyItems">
+                <ion-label>{{dummyItem.name}}</ion-label>
+                <ion-checkbox item-end></ion-checkbox>
+                <ion-icon item-end class="arrow-dropright" ios="ios-arrow-dropright" md="md-arrow-dropright"></ion-icon>
             </ion-item>
-
-            <div class="expandable" [ngClass]="{'active': expandCol === 'beforeFinish'}">
-                <ion-item class="item-accordion" *ngFor="let dummyItem of dummyItems">
-                    {{dummyItem.name}}
+        </div>
+    </ion-list>
+    <ion-list class="stage-status">
+        <ion-item class="item-stable" (click)="expandCollapse('beforeFinish')">
+            Before Finish
+            <ion-icon item-end ios="md-add" md="md-add" *ngIf="expandCol !== 'beforeFinish'"></ion-icon>
+            <ion-icon item-end ios="md-remove" md="md-remove" *ngIf="expandCol === 'beforeFinish'"></ion-icon>
+        </ion-item>
+        <div class="expandable" [ngClass]="{'active': expandCol === 'beforeFinish'}">
+            <ion-list>
+                <ion-item *ngFor="let dummyItem of dummyItems">
+                    <ion-label>{{dummyItem.name}}</ion-label>
+                    <ion-checkbox item-end></ion-checkbox>
+                    <ion-icon item-end class="arrow-dropright" ios="ios-arrow-dropright" md="md-arrow-dropright"></ion-icon>
                 </ion-item>
-            </div>
+            </ion-list>
+            <ion-item>
+
+                <!--<ion-icon item-end ios="ios-checkmark-circle-outline" md="md-checkmark-circle-outline"></ion-icon>-->
+            </ion-item>
         </div>
     </ion-list>
 </ion-content>

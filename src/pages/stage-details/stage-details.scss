@@ -1,18 +1,89 @@
 page-stage-details {
+    ion-list.list {
+        ion-item.item-block {
+            @include padding(0);
+            min-height: 2rem;
+            &:first-child,
+            &:last-child {
+                border: none;
+            }
+            ion-label {
+                @include margin(0);
+                @include padding(0);
+            }
+        }
+        ion-item.item-block.item-date {
+            @include margin(.5rem 0 0 0);
+            .item-inner {
+                @include padding(0 .5rem 0 .75rem);
+            }
+            [item-content] {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                button {
+                    font-size: .75rem;
+                    background: transparent;
+                    color: #666;
+                    font-weight: 300;
+                }
+            }
+            ion-icon {
+                @include margin(0);
+                font-size: 1.5rem;
+                line-height: 1.5rem;
+                min-height: 1.5rem;
+                @include padding(0 0 0 .563rem);
+                border-left: 1px solid #ccc;
+            }
+        }
+    }
+    .stage-status.list {
+        @include margin(0 0 1rem 0);
+        ion-item.item-stable {
+            background: $blue4;
+            font-size: 1.125rem;
+            ion-icon {
+                @include padding(.5rem .75rem);
+                @include margin(0);
+                font-size: 1.5rem;
+                min-height: 1.5rem;
+            }
+            ion-label {
+                @include padding(0.625rem 0 0.625rem 0.75rem);
+            }
+            .item-inner {
+                @include padding(0);
+            }
+        }
+        .expandable {
+            ion-item {
+                @include padding(0);
+                font-weight: 300;
+                font-size: .875rem;
+            }
+            ion-label {
+                @include padding(0.625rem 0 0.625rem 0.75rem);
+            }
+        }
+    }
     .contractor-list {
         ion-label {
-            font-size: 1rem;
+            font-size: .875rem;
             @include margin(0);
         }
         ion-list {
             display: flex;
             flex-direction: row;
+            @include margin(0 0 .5rem 0);
             ion-item.item-block {
-                min-height: 2.75rem;
                 width: 50%;
-                @include padding(0);
                 border: none;
+                &:last-child {
+                    @include margin(0 0 0 .25rem);
+                }
                 .item-inner {
+                    @include padding(0);
                     border-bottom: none;
                     .input-wrapper {
                         border: 1px solid #e8e8e8;
@@ -26,7 +97,9 @@ page-stage-details {
                     font-size: .75rem;
                     @include padding(.25rem .75rem .25rem .25rem);
                     .select-text {
-                        @extend %content-center;
+                        display: flex;
+                        align-items: center;
+                        justify-content: start;
                         border-right: 1px solid #e8e8e8;
                     }
                     .select-icon {
@@ -34,11 +107,33 @@ page-stage-details {
                         top: calc(25% - 3px);
                     }
                 }
+                ion-searchbar.searchbar-has-value.searchbar-has-focus .searchbar-clear-icon {
+                    display: none;
+                }
                 ion-searchbar {
-                    padding: 0;
+                    @include padding(.25rem .25rem .25rem .5rem);
                     background: transparent;
                     border: none;
+                    line-height: 2rem;
                     min-height: 2rem;
+                    box-shadow: none;
+                    input.searchbar-input {
+                        min-height: 1.5rem;
+                        height: 1.5rem;
+                        font-size: .75rem;
+                        ;
+                        border-right: 1px solid #ccc;
+                        width: calc(100% - 1.5rem);
+                        box-shadow: none;
+                        border-radius: 0;
+                        @include margin(0 1.5rem 0 0);
+                        @include padding(0);
+                    }
+                    .searchbar-search-icon {
+                        right: .188rem;
+                        left: auto;
+                        top: .438rem;
+                    }
                 }
             }
         }
@@ -48,6 +143,29 @@ page-stage-details {
     }
     .expandable {
         display: none;
+        ion-checkbox.checkbox {
+            .checkbox-icon {
+                border: none;
+                .checkbox-inner {
+                    left: .5rem;
+                    top: .25rem;
+                }
+            }
+            .checkbox-icon.checkbox-checked {
+                background: transparent;
+                border: 1px solid $orange;
+                .checkbox-inner {
+                    border-color: $orange;
+                }
+            }
+        }
+        .arrow-dropright {
+            font-size: 1.5rem;
+            min-height: 1.5rem;
+            border-left: 1px solid #ccc;
+            padding-left: .5rem;
+            margin: 0;
+        }
     }
     .expandable.active {
         display: block;
