@@ -222,3 +222,42 @@ ion-tabs.tabs-md {
 ion-buttons[start]{
     order: 1;
 }
+.menu-inner{
+    ion-header{
+        background: $blue2;
+        ion-toolbar.toolbar{
+            
+            .toolbar-background{
+                background: $blue2;
+            }
+            .toolbar-content{
+                .toolbar-title{
+                    font-size: 1rem;
+                    color: #fff;
+                }
+                
+            }
+        }
+    }
+    ion-content.content{
+        background: $blue2;
+        ion-list{
+            background: $blue2;
+            button{
+                padding: 0;
+                background: $blue2;
+                min-height: 2rem;
+                ion-label{
+                    color: #ffffff;
+                    font-size: .875rem;
+                }
+                .item-inner{
+                    border-bottom: 1px solid #0d2846;
+                    padding: 0 16px;
+                }
+            }
+        }
+    }
+
+    
+}

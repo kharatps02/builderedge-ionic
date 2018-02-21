@@ -1,4 +1,20 @@
 page-stages {
+    ion-badge.badge{
+        color: #fff;
+        background-color: #FF3C3C;
+        position: absolute;
+        top: -6px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        overflow: hidden;
+        font-size: .625rem;
+        padding: 1px;
+        align-items: center;
+        display: flex;
+        right: 0;
+        justify-content: center;
+    }
     ion-card.card.stages {
         @include padding(0);
         @include margin(0 0 1rem 0);

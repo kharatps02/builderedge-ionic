@@ -113,6 +113,7 @@ page-defects {
                     pointer-events: none;
                     @include padding(0);
                     @include margin(0);
+                    box-shadow: none;
                     span {
                         width: 100%;
                         display: flex;
@@ -185,5 +186,12 @@ page-defects {
                 width: 30%;
             }
         }
+    }
+    .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, 
+    .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+    .list-md .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, 
+    .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child{
+        border-bottom: 1px solid #ccc;
+        box-shadow: none;
     }
 }
