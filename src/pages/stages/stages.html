@@ -23,17 +23,17 @@
         <ion-refresher-content pullingText="Pull to refresh"></ion-refresher-content>
     </ion-refresher>
     <ion-card class="stages" *ngFor="let stage of stages">
-        <ion-card-header>
+        <ion-card-header [ngClass]="{'late-start': stage.status === 'Late Start', 'in-progress': stage.status === 'In Progress', 'done': stage.status === 'Done'}">
             <ion-label>{{stage.name}}</ion-label>
             <ion-label text-right>
                 <span></span> {{stage.status}}</ion-label>
         </ion-card-header>
         <ion-item class="more">
             <div item-content>
-                <span>Start:</span>
+                <span>Start:&nbsp;</span>
                 <cite>{{stage.start_date}}</cite>
                 <ion-icon class="arrow" name="arrow-round-forward"></ion-icon>
-                <span>End:</span>
+                <span>End:&nbsp;</span>
                 <cite>{{stage.end_date}}</cite>
             </div>
             <ion-icon class="more__icon" ios="ios-more" md="md-more"></ion-icon>
