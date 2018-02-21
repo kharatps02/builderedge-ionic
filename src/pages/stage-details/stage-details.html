@@ -34,7 +34,7 @@
             <ion-item *ngFor="let dummyItem of dummyItems">
                 <ion-label>{{dummyItem.name}}</ion-label>
                 <ion-checkbox item-end></ion-checkbox>
-                <ion-icon item-end class="arrow-dropright" ios="ios-arrow-dropright" md="md-arrow-dropright"></ion-icon>
+                <ion-icon item-end class="arrow-dropright" ios="ios-arrow-dropright" md="ios-arrow-dropright"></ion-icon>
             </ion-item>
             <ion-item class="item-date">
                 <div item-content>
@@ -46,8 +46,9 @@
                 <ion-icon item-end name="calendar" (click)="picker.open()"></ion-icon>
             </ion-item>
         </div>
+        <button ion-button class="grey-btn">Start</button>
     </ion-list>
-    <button ion-button class="blue-btn">Start</button>
+    
     <ion-list class="stage-status">
         <ion-item class="item-stable" (click)="expandCollapse('inProgress')">
             During Work
@@ -81,5 +82,20 @@
                 <!--<ion-icon item-end ios="ios-checkmark-circle-outline" md="md-checkmark-circle-outline"></ion-icon>-->
             </ion-item>
         </div>
+    </ion-list>
+
+    <ion-list class="stage-status">
+        <div class="expandable" [ngClass]="{'active': expandCol === 'beforeStart'}">
+            <ion-item class="item-date">
+                <div item-content>
+                    <span>Start Date:</span>
+                    <button ion-button icon-right (click)="picker.open()">
+                        <ion-datetime #picker1 pickerFormat="DD MMMM YYYY" [min]="datePickerMin" [(ngModel)]="endDatePicker"></ion-datetime>
+                    </button>
+                </div>
+                <ion-icon item-end name="calendar" (click)="picker1.open()"></ion-icon>
+            </ion-item>
+        </div>
+        <button ion-button class="grey-btn">End</button>
     </ion-list>
 </ion-content>

@@ -26,6 +26,8 @@ page-stage-details {
                     background: transparent;
                     color: #666;
                     font-weight: 300;
+                    box-shadow: none;
+                    width: 70%;
                 }
             }
             ion-icon {
@@ -72,6 +74,7 @@ page-stage-details {
             font-size: .875rem;
             @include margin(0);
         }
+         
         ion-list {
             display: flex;
             flex-direction: row;
@@ -107,6 +110,7 @@ page-stage-details {
                         top: calc(25% - 3px);
                     }
                 }
+                
                 ion-searchbar.searchbar-has-value.searchbar-has-focus .searchbar-clear-icon {
                     display: none;
                 }
@@ -129,12 +133,22 @@ page-stage-details {
                         @include margin(0 1.5rem 0 0);
                         @include padding(0);
                     }
-                    .searchbar-search-icon {
+                    
+                }
+                ion-searchbar.searchbar-md{
+                    .searchbar-search-icon{
+                        right: 0;
+                        left: auto;
+                        top: .125rem;
+                    }
+                }
+                ion-searchbar.searchbar-ios{
+                    .searchbar-search-icon{
                         right: .188rem;
                         left: auto;
                         top: .438rem;
                     }
-                }
+                } 
             }
         }
     }
@@ -146,17 +160,30 @@ page-stage-details {
         ion-checkbox.checkbox {
             .checkbox-icon {
                 border: none;
-                .checkbox-inner {
-                    left: .5rem;
-                    top: .25rem;
-                }
             }
             .checkbox-icon.checkbox-checked {
                 background: transparent;
                 border: 1px solid $orange;
+                border-radius: 50%;
                 .checkbox-inner {
                     border-color: $orange;
                 }
+            }
+        }
+        ion-checkbox.checkbox-md {
+            .checkbox-icon {
+                width: 21px;
+                height: 21px;
+            }
+            .checkbox-inner {
+                left: .438rem;
+                top: .25rem;
+            }
+        }
+        ion-checkbox.checkbox-ios {
+            .checkbox-inner {
+                left: .5rem;
+                top: .25rem;
             }
         }
         .arrow-dropright {
@@ -170,4 +197,11 @@ page-stage-details {
     .expandable.active {
         display: block;
     }
+    .grey-btn {
+        width: calc(100% - 20%);
+        margin: 10px 10% 0 10%;
+    }
 }
+
+
+ 

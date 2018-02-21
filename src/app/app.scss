@@ -86,9 +86,18 @@ ion-title.title {
     background: $blue2;
 }
 
+.back-button-ios {
+    font-size: 1rem;
+}
+
+.back-button-icon-md,
+.back-button-icon-ios {
+    font-size: 1.5rem;
+}
+
 .grey-btn {
     color: $grey4;
-    background: $grey3;
+    background: $grey5;
     @include padding(1rem 0);
 }
 
@@ -101,6 +110,7 @@ ion-title.title {
 ion-select {
     max-width: 100%;
 }
+
 .blue-header {
     ion-select {
         max-width: 100%;
@@ -134,42 +144,78 @@ ion-popover.select-popover {
         left: 0 !important;
         width: 100%;
         ion-list[radio-group] {
-        ion-item.item-block{
-            min-height: 3rem;
-            ion-label{
-                color: #000;
-                font-size: 1rem;
+            ion-item.item-block {
+                min-height: 3rem;
+                ion-label {
+                    color: #000;
+                    font-size: 1rem;
+                }
             }
         }
     }
-    }
-    
 }
+
 
 /* Radio Popup */
 
-.alert-radio-group{
-    button.alert-radio, button.alert-radio[aria-checked=true]{ 
+.alert-radio-group {
+    button.alert-radio,
+    button.alert-radio[aria-checked=true] {
         border-bottom: 1px solid #e8e8e8;
-        .alert-radio-label{
+        .alert-radio-label {
             color: #000;
             font-size: 1rem;
         }
     }
 }
 
-ion-picker-cmp.picker-ios, ion-picker-cmp.picker-md{
-    .picker-opts{
-        .picker-opt{
+ion-picker-cmp.picker-ios,
+ion-picker-cmp.picker-md {
+    .picker-opts {
+        .picker-opt {
             height: 2.8rem;
             font-size: 1rem;
         }
     }
 }
-.button-md, .button-ios{
+
+.button-md,
+.button-ios {
     font-size: 1rem;
 }
-.invisiable{
+
+.invisiable {
     display: none;
     visibility: hidden;
+}
+
+
+/* Tab */
+
+.tabs {
+    ion-icon.tab-button-icon {
+        font-size: 1.5rem;
+    }
+    .tab-button-text {
+        font-size: .75rem;
+        font-weight: 400;
+        
+    }
+    .tab-button[aria-selected=true]{
+        background: $blue2;
+        ion-icon.tab-button-icon, .tab-button-text {
+            color: #fff;
+            transform: none;
+        }
+    }
+}
+ion-tabs.tabs-md {
+    .tab-button, .tab-button[aria-selected=true]{
+        @include padding(.125rem 0 0 0);
+        min-height: 3.125rem;
+    }
+    .tab-button-text {
+        font-size: .75rem;
+        font-weight: 400;
+    }
 }
